@@ -75,6 +75,7 @@ function mostrarAutos(autos){
     // Elimina el HTML previo
     limpiarHTML();
 
+    // Crea los resultados de la busqueda
     autos.forEach((auto) => {
         const autoHTML = document.createElement('p');
         const {marca, modelo, year, precio, puertas, color, transmision} = auto;
@@ -110,12 +111,30 @@ function llenarSelect(){
 // Funcion que filtra la busqueda
 function filtrarAuto(){
     const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filter(filtrarTransmision).filter(filtrarColor);
-    //console.log(resultado);
-    mostrarAutos(resultado);
+    
+    if(resultado.length){
+        mostrarAutos(resultado);
+    } else {
+        sinResultado();
+    }
+    
 }
 
+// Funcion para cuando no se encuentran resultados
+function sinResultado(){
+
+    limpiarHTML();
+
+    // Crea HTML para cuando no se encuentran resultados
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta', 'error');
+    noResultado.textContent = 'No hay resultados, intenta con otros términos de búsqueda';
+    resultado.appendChild(noResultado);
+}
+
+// Filtros de select
 function filtrarMarca(auto){
-    const { marca } = datosBusqueda;
+    const {marca} = datosBusqueda;
     if(marca){
         return auto.marca === marca;
     } else {
@@ -124,7 +143,7 @@ function filtrarMarca(auto){
 }
 
 function filtrarYear(auto){
-    const { year } = datosBusqueda;
+    const {year} = datosBusqueda;
     if(year){
         return auto.year === parseInt(year);
     } else {
@@ -133,7 +152,7 @@ function filtrarYear(auto){
 }
 
 function filtrarMinimo(auto){
-    const { minimo } = datosBusqueda;
+    const {minimo} = datosBusqueda;
     if(minimo){
         return auto.precio >= minimo;
     } else {
@@ -142,7 +161,7 @@ function filtrarMinimo(auto){
 }
 
 function filtrarMaximo(auto){
-    const { maximo } = datosBusqueda;
+    const {maximo} = datosBusqueda;
     if(maximo){
         return auto.precio <= maximo;
     } else {
@@ -153,7 +172,7 @@ function filtrarMaximo(auto){
 function filtrarPuertas(auto){
     const {puertas} = datosBusqueda;
     if(puertas) {
-        return auto.puertas === puertas;
+        return auto.puertas === parseInt(puertas);
     } else {
         return auto;
     }
