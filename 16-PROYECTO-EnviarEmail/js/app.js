@@ -117,7 +117,10 @@ function enviarEmail(e){
 }
 
 // Funcion que resetea el formulaio
-function resetForm(){
+function resetForm(e){
+    e.preventDefault();
     formulario.reset();
     iniciarApp();
+    //e.target.classList.remove('border', 'border-red-500');
+    //e.target.classList.remove('border', 'border-green-500');
 }
