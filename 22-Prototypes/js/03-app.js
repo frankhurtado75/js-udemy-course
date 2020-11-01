@@ -8,7 +8,7 @@ function Cliente(nombre, saldo) {
 
 // Obtener tipo cliente
 Cliente.prototype.tipoCliente = function() {
-    //// Con prototypes tienes que utilizar function buscara en el mismo objeto mientras que un arrow function irá hacia la ventana global marcandote un undefined
+    // Con prototypes tienes que utilizar function buscara en el mismo objeto mientras que un arrow function irá hacia la ventana global marcandote un undefined
     let tipo;
     if(this.saldo > 10000) {
         tipo = 'Gold';
@@ -20,11 +20,12 @@ Cliente.prototype.tipoCliente = function() {
     return tipo;
 }
 
-// Otro Prototipo para el nombre completo
+// Otro prototipo para los datos completos
 Cliente.prototype.nombreClienteSaldo = function(){
     return `Nombre: ${this.nombre}, Saldo ${this.saldo}, Tipo Cliente:  ${this.tipoCliente()} `;
 }
 
+// Prototipo para restar saldo del cliente
 Cliente.prototype.retiraSaldo = function(retiro){
     this.saldo -= retiro;
 }
@@ -32,13 +33,13 @@ Cliente.prototype.retiraSaldo = function(retiro){
 // Instanciarlo
 const pedro = new Cliente('Pedro', 6000);
 
-// Acceder a los prototypes
+// Acceder al tipo de cliente
 console.log(pedro.tipoCliente());
 
-// Un prototype que accede a otros prototypes
+// Accede a los prototypes y datos completos
 console.log(pedro.nombreClienteSaldo());
 
-// Reescribir un valor
+// Reescribir un valor del saldo
 pedro.retiraSaldo(2000);
 
 // Comprobar saldo

@@ -1,10 +1,20 @@
-function Cliente(nombre, saldo){
+// Herencia de un constructor
+
+// Creacion de constructores
+function Cliente(nombre, saldo) {
     this.nombre = nombre;
     this.saldo = saldo;
 }
 
-// Obtener Tipo de Cliente
-Cliente.prototype.tipoCliente = function(){
+function Persona(nombre,saldo,telefono){
+    // Heredar de otro constructor 
+    Cliente.call(this, nombre, saldo);
+    this.telefono = telefono;
+}
+
+// Obtener tipo cliente
+Cliente.prototype.tipoCliente = function() {
+    // Con prototypes tienes que utilizar function buscara en el mismo objeto mientras que un arrow function irá hacia la ventana global marcandote un undefined
     let tipo;
     if(this.saldo > 10000) {
         tipo = 'Gold';
@@ -16,56 +26,33 @@ Cliente.prototype.tipoCliente = function(){
     return tipo;
 }
 
-// Otro Prototipo para el nombre completo
+// Otro prototipo para los datos completos
 Cliente.prototype.nombreClienteSaldo = function(){
     return `Nombre: ${this.nombre}, Saldo ${this.saldo}, Tipo Cliente:  ${this.tipoCliente()} `;
 }
 
-Cliente.prototype.retiraSaldo = function(retiro) {
+// Prototipo para restar saldo del cliente
+Cliente.prototype.retiraSaldo = function(retiro){
     this.saldo -= retiro;
 }
 
-// Instanciarlo
-const pedro = new Cliente('Pedro', 6000);
-
-// Acceder a los prototypes
-console.log(pedro.tipoCliente());
-
-// Un prototype que accede a otros prototypes
-console.log(pedro.nombreClienteSaldo());
-
-// reescribir un valor
-pedro.retiraSaldo(2000);
-
-// comprobar saldo
-console.log(pedro.nombreClienteSaldo());
-
-// NUEVO: Heredar Prototypes
-
-// Crear 2 objetos nuevos...
-function Persona(nombre, saldo, telefono){
-    // this.nombre = nombre;
-    // this.saldo = saldo;
-    // this.telefono = telefono;
-
-    // Debe ser:
-    Cliente.call(this, nombre, saldo);
-    this.telefono = telefono;
-}
-
-// Heredar la función ( Antes de Instanciarlo )
+// Heredar la función (Antes de Instanciarlo)
 Persona.prototype = Object.create(Cliente.prototype);
 
 // Heredar el constructor
 Persona.prototype.constructor = Cliente;
 
-// Instanciarlo
-const juan = new Persona('Juan', 6000, 1120192);
-console.log(juan);
-
-// Crear Prototype solo para Persona...
+// Prototype sin heredar para Persona
 Persona.prototype.mostrarTelefono = function(){
-    return `El teléfono de este cliente es: ${this.telefono}`
+    return `El teléfono de esta persona es ${this.telefono}`
 }
-console.log ( juan.nombreClienteSaldo() );
-console.log ( juan.mostrarTelefono() );
+
+// Instancias
+const franklin = new Persona('Franklin', '8000', '8731943');
+console.log(franklin);
+
+// Accede a los datos heredados
+console.log(franklin.nombreClienteSaldo());
+
+// Accede al número de teléfono
+console.log(franklin.mostrarTelefono());
