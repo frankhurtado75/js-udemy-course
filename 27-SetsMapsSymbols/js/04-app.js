@@ -1,4 +1,4 @@
-// Wekmap, solo aceptan objetos
+// Weakmap, solo aceptan objetos
 const producto = {
     idProducto: 10
 }
