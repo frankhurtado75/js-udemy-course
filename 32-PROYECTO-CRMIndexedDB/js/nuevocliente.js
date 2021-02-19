@@ -35,6 +35,39 @@
             imprimirAlterta('Todos los campos son obligatorios','error');
             return;
         };
+
+        // Crear un objeto con la información
+        const cliente = {
+            nombre,
+            email,
+            telefono,
+            empresa
+        };
+
+        cliente.id = Date.now();
+
+        crearNuevoCliente(cliente);
+        
+    };
+
+    function crearNuevoCliente(cliente){
+        const transaction = DB.transaction(['crm'], 'readwrite');
+
+        const objectStore = transaction.objectStore('crm');
+
+        objectStore.add(cliente);
+
+        transaction.onerror = function(){
+            imprimirAlterta('Hubo un error 3', 'error');
+        };
+
+        transaction.oncomplete = function(){
+            imprimirAlterta('El cliente se agregó correctamente');
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 3000);
+        };
     };
 
     function imprimirAlterta(mensaje, tipo){
@@ -49,7 +82,7 @@
                 divMensaje.classList.add('bg-red-100', "border-red-400", "text-red-700");
             } else {
                 divMensaje.classList.add('bg-green-100', "border-green-400", "text-green-700");
-            }
+            };
         
             // Mensaje de error
             divMensaje.textContent = mensaje;
@@ -61,8 +94,6 @@
             setTimeout(() => {
                 divMensaje.remove();
             }, 3000);
-        }
-
-        
+        };
     };
 })();
