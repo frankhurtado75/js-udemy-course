@@ -7,8 +7,8 @@ UI.formularioBuscar.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Obtener datos del formulario
-    artista = document.querySelector('#artista').value;
-    cancion = document.querySelector('#cancion').value;
+    const artista = document.querySelector('#artista').value;
+    const cancion = document.querySelector('#cancion').value;
 
     if(artista === '' || cancion === ''){
         // El usuario deja los campos vacios. Mostrar error
@@ -24,6 +24,5 @@ UI.formularioBuscar.addEventListener('submit', (e) => {
 
     // El formulario está completo. Realizar consulta a la API
     const busqueda = new API(artista, cancion);
-    console.log(busqueda);
-    
+    busqueda.consultarAPI()
 });
