@@ -16,14 +16,14 @@ class API {
                     UI.divResultado.textContent = lyrics;
                     UI.headingResultado.textContent = `Letra de la canción: ${this.cancion} de ${this.artista}`;
                     UI.formularioBuscar.reset();
-                } else {
-                    UI.divMensajes.textContent = 'La canción No existe, prueba con otra búsqueda';
+                }else{
+                    UI.divMensajes.textContent = 'La canción no existe, prueba con otra búsqueda';
                     UI.divMensajes.classList.add('error');
-                    setTimeout(() => {
+                    /*setTimeout(() => {
                         UI.divMensajes.textContent = '';
                         UI.divMensajes.classList.remove('error');
                         UI.formularioBuscar.reset();
-                    }, 3000);
+                    }, 3000);*/
                 }
             })
             .catch(error => console.log(error))
