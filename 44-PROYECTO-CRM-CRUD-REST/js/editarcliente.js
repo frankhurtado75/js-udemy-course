@@ -1,4 +1,4 @@
-import {obtenerCliente} from './API.js';
+import {obtenerCliente, editarCliente} from './API.js';
 import {mostrarAlerta, validar} from './funciones.js'
 
 (function(){
@@ -11,6 +11,7 @@ import {mostrarAlerta, validar} from './funciones.js'
     const idInput = document.querySelector('#id');
 
     document.addEventListener('DOMContentLoaded', async () => {
+        // Verifica si el cliente existe
         const parametrosURL = new URLSearchParams(window.location.search);
 
         const idCliente = parseInt(parametrosURL.get('id'));
@@ -19,8 +20,8 @@ import {mostrarAlerta, validar} from './funciones.js'
 
         mostrarCliente(cliente);
 
-        // Submit al formilario
-        const formulario = document.querySelector('#formulaio');
+        // Registra el formulario
+        const formulario = document.querySelector('#formulario');
         formulario.addEventListener('submit', validarCliente);
     });
 
@@ -46,13 +47,14 @@ import {mostrarAlerta, validar} from './funciones.js'
         }
 
         if(validar(cliente)){
+            
             // Mostrar mensaje
             mostrarAlerta('Todos los campos son obligatorios');
-        } else {
-            nuevoCliente(cliente);
+            return;
         }
 
-        // Reescribe un objeto
+        // Reescribe el objeto
+        editarCliente(cliente);
     }
 
 }());

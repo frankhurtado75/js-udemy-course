@@ -35,14 +35,14 @@ import {obtenerClientes, eliminarCliente} from './API.js';
         });
     }
 
-    function confirmarEliminar(e){
+    async function confirmarEliminar(e){
         if(e.target.classList.contains('eliminar')){
             const clienteID = parseInt(e.target.dataset.cliente);
 
             const confirmar = confirm('¿Deseas eliminar este registro?');
 
             if(confirmar){
-                eliminarCliente(clienteID);
+                await eliminarCliente(clienteID);
             }
         }
     }

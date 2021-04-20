@@ -23,9 +23,10 @@ import {nuevoCliente} from './API.js'
         if(validar(cliente)){
             // Mostrar mensaje
             mostrarAlerta('Todos los campos son obligatorios');
-        } else {
-            nuevoCliente(cliente);
-        }
+            return;
+    }
+
+    nuevoCliente(cliente);
     }
     
 })(); 
