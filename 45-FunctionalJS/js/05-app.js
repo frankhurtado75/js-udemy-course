@@ -1,3 +1,4 @@
+// En la programación funcional también se busca tener código más corto
 const carrito = [
     { nombre: 'Monitor 20 Pulgadas', precio: 500},
     { nombre: 'Televisión 50 Pulgadas', precio: 700},
@@ -8,3 +9,11 @@ const carrito = [
     { nombre: 'Bocinas', precio: 300},
     { nombre: 'Laptop', precio: 800},
 ];
+
+const obtenerNombres = p => p.nombre; 
+const resultado1 = carrito.map(obtenerNombres);
+console.log(resultado1);
+
+const mayor400 = p => p.precio > 400;
+const resultado2 = carrito.filter(mayor400);
+console.log(resultado2);

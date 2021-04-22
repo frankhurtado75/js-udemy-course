@@ -1,3 +1,4 @@
+// Utilizando MAP
 const carrito = [
     { nombre: 'Monitor 20 Pulgadas', precio: 500},
     { nombre: 'Televisión 50 Pulgadas', precio: 700},
@@ -8,3 +9,10 @@ const carrito = [
     { nombre: 'Bocinas', precio: 300},
     { nombre: 'Laptop', precio: 800},
 ];
+
+const obtenerNombres = producto => {
+    return producto.nombre
+} 
+
+const resultado = carrito.map(obtenerNombres);
+console.log(resultado);
