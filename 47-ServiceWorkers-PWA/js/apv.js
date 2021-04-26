@@ -16,13 +16,11 @@ formulario.addEventListener('submit', nuevaCita);
 // Heading
 const heading = document.querySelector('#administra');
 
-
 let editando = false;
-
 
 // Eventos
 eventListeners();
-function eventListeners() {
+function eventListeners(){
     mascotaInput.addEventListener('change', datosCita);
     propietarioInput.addEventListener('change', datosCita);
     telefonoInput.addEventListener('change', datosCita);
@@ -41,44 +39,43 @@ const citaObj = {
 }
 
 
-function datosCita(e) {
-    //  console.log(e.target.name) // Obtener el Input
-     citaObj[e.target.name] = e.target.value;
+function datosCita(e){
+    // Obtener el Input
+    citaObj[e.target.name] = e.target.value;
 }
 
 // CLasses
-class Citas {
-    constructor() {
-        this.citas = []
+class Citas{
+    constructor(){
+        this.citas = [];
     }
-    agregarCita(cita) {
+    agregarCita(cita){
         this.citas = [...this.citas, cita];
     }
-    editarCita(citaActualizada) {
-        this.citas = this.citas.map( cita => cita.id === citaActualizada.id ? citaActualizada : cita)
+    editarCita(citaActualizada){
+        this.citas = this.citas.map(cita => cita.id === citaActualizada.id ? citaActualizada : cita);
     }
 
     eliminarCita(id) {
-        this.citas = this.citas.filter( cita => cita.id !== id);
+        this.citas = this.citas.filter(cita => cita.id !== id);
     }
 }
 
-class UI {
-
-    constructor({citas}) {
+class UI{
+    constructor({citas}){
         this.textoHeading(citas);
     }
 
-    imprimirAlerta(mensaje, tipo) {
+    imprimirAlerta(mensaje, tipo){
         // Crea el div
         const divMensaje = document.createElement('div');
         divMensaje.classList.add('text-center', 'alert', 'd-block', 'col-12');
         
         // Si es de tipo error agrega una clase
-        if(tipo === 'error') {
-             divMensaje.classList.add('alert-danger');
+        if(tipo === 'error'){
+            divMensaje.classList.add('alert-danger');
         } else {
-             divMensaje.classList.add('alert-success');
+            divMensaje.classList.add('alert-success');
         }
 
         // Mensaje de error
@@ -88,13 +85,14 @@ class UI {
         document.querySelector('#contenido').insertBefore( divMensaje , document.querySelector('.agregar-cita'));
 
         // Quitar el alert despues de 3 segundos
-        setTimeout( () => {
+        setTimeout(() => {
             divMensaje.remove();
         }, 3000);
-   }
+    }
 
-   imprimirCitas({citas}) { // Se puede aplicar destructuring desde la función...
-       
+    imprimirCitas({citas}){ 
+       // Se puede aplicar destructuring desde la función...
+    
         this.limpiarHTML();
 
         this.textoHeading(citas);
@@ -151,21 +149,21 @@ class UI {
 
             contenedorCitas.appendChild(divCita);
         });    
-   }
+    }
 
-   textoHeading(citas) {
-        if(citas.length > 0 ) {
+    textoHeading(citas){
+        if(citas.length > 0 ){
             heading.textContent = 'Administra tus Citas '
         } else {
             heading.textContent = 'No hay Citas, comienza creando una'
         }
     }
 
-   limpiarHTML() {
-        while(contenedorCitas.firstChild) {
+    limpiarHTML(){
+        while(contenedorCitas.firstChild){
             contenedorCitas.removeChild(contenedorCitas.firstChild);
         }
-   }
+    }
 }
 
 
