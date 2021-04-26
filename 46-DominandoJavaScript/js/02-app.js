@@ -15,6 +15,7 @@ obtenerCliente('Gabriel');
 // Si se utiliza la forma de function expression si recuerdas eso nos daría un error
 
 // obtenerCliente2('Juan'); // Esto no va a servir
+
 const obtenerCliente2 = function(nombre) {
     console.log(`El nombre del cliente es ${nombre}`);
 }

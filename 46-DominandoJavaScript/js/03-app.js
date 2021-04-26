@@ -10,6 +10,7 @@ const numero2 = "40";
 console.log(numero1 + numero2);
 
 // También puedes convertir un string a número:
+
 // Coercion Explicita
 const numero3 = "20";
 
