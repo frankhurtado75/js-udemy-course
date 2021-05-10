@@ -1,7 +1,12 @@
 import {eliminarCita, cargarEdicion} from '../funciones.js';
-import {contenedorCitas} from '../selectores.js';
+import {contenedorCitas, heading} from '../selectores.js';
 
 class UI{
+
+    constructor({citas}) {
+        this.textoHeading(citas);
+    }
+
     imprimirAlerta(mensaje, tipo){
         // Crear el div
         const divMensaje = document.createElement('div');
@@ -29,6 +34,8 @@ class UI{
     imprimirCitas({citas}){ // Se puede aplicar destructuring desde la función...
 
         this.limpiarHTML();
+
+        this.textoHeading(citas);
 
         citas.forEach(cita => {
             const {mascota, propietario, telefono, fecha, hora, sintomas, id} = cita;
@@ -92,6 +99,14 @@ class UI{
             // Agregar las citas al HTML
             contenedorCitas.appendChild(divCita);
         })
+    }
+
+    textoHeading(citas) {
+        if(citas.length > 0 ) {
+            heading.textContent = 'Administra tus Citas';
+        } else {
+            heading.textContent = 'No hay Citas, comienza creando una'
+        }
     }
 
     limpiarHTML(){
