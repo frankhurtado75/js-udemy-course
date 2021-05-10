@@ -1,4 +1,4 @@
-import { datosCita, nuevaCita } from '../funciones.js';
+import {datosCita, nuevaCita} from '../funciones.js';
 import { 
     mascotaInput, 
     propietarioInput, 
@@ -11,11 +11,11 @@ import {
 
 class App {
 
-    constructor() {
+    constructor(){
         this.initApp();
     }
 
-    initApp() {
+    initApp(){
         mascotaInput.addEventListener('change', datosCita);
         propietarioInput.addEventListener('change', datosCita);
         telefonoInput.addEventListener('change', datosCita);
@@ -25,9 +25,7 @@ class App {
 
         // Formulario para nuevas citas
         formulario.addEventListener('submit', nuevaCita);
-
     }
-
 }
 
 export default App;
