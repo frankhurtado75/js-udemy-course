@@ -1,0 +1,19 @@
+{
+  "name": "51-testing-jest",
+  "version": "1.0.0",
+  "description": "Aprendiendo JEST",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "frankhurtado75"
+  },
+  "author": "frankhurtado75",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.1",
+    "jest": "^26.6.3"
+  }
+}

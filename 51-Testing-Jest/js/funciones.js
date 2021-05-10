@@ -27,35 +27,29 @@ const citaObj = {
 }
 
 
-export function datosCita(e) {
-    //  console.log(e.target.name) // Obtener el Input
-     citaObj[e.target.name] = e.target.value;
+export function datosCita(e){
+    citaObj[e.target.name] = e.target.value;
 }
 
 
 
-export function nuevaCita(e) {
+export function nuevaCita(e){
     e.preventDefault();
 
-    const {mascota, propietario, telefono, fecha, hora, sintomas } = citaObj;
+    const {mascota, propietario, telefono, fecha, hora, sintomas} = citaObj;
 
     // Validar
-    if( mascota === '' || propietario === '' || telefono === '' || fecha === ''  || hora === '' || sintomas === '' ) {
+    if(mascota === '' || propietario === '' || telefono === '' || fecha === ''  || hora === '' || sintomas === '' ){
         ui.imprimirAlerta('Todos los campos son Obligatorios', 'error')
-
         return;
     }
 
-    if(editando) {
+    if(editando){
         // Estamos editando
-        administrarCitas.editarCita( {...citaObj} );
-
+        administrarCitas.editarCita({...citaObj});
         ui.imprimirAlerta('Guardado Correctamente');
-
         formulario.querySelector('button[type="submit"]').textContent = 'Crear Cita';
-
         editando = false;
-
     } else {
         // Nuevo Registrando
 
@@ -65,7 +59,7 @@ export function nuevaCita(e) {
         // Añade la nueva cita
         administrarCitas.agregarCita({...citaObj});
 
-        // Mostrar mensaje de que todo esta bien...
+        // Mostrar mensaje de que todo esta bien
         ui.imprimirAlerta('Se agregó correctamente')
     }
 
@@ -81,7 +75,7 @@ export function nuevaCita(e) {
 
 }
 
-export function reiniciarObjeto() {
+export function reiniciarObjeto(){
     // Reiniciar el objeto
     citaObj.mascota = '';
     citaObj.propietario = '';
@@ -92,15 +86,13 @@ export function reiniciarObjeto() {
 }
 
 
-export function eliminarCita(id) {
+export function eliminarCita(id){
     administrarCitas.eliminarCita(id);
-
     ui.imprimirCitas(administrarCitas)
 }
 
-export function cargarEdicion(cita) {
-
-    const {mascota, propietario, telefono, fecha, hora, sintomas, id } = cita;
+export function cargarEdicion(cita){
+    const {mascota, propietario, telefono, fecha, hora, sintomas, id} = cita;
 
     // Reiniciar el objeto
     citaObj.mascota = mascota;
@@ -122,5 +114,8 @@ export function cargarEdicion(cita) {
     formulario.querySelector('button[type="submit"]').textContent = 'Guardar Cambios';
 
     editando = true;
+}
 
+export function suma(a,b){
+    return a + b;
 }

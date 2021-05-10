@@ -1,0 +1,14 @@
+// Instalar babel npm i --save-dev @babel/preset-env
+// La configuración nos permite habilitar import a un projecto de node que soporta la sintaxis de comondJS
+// Permite usar import usando jest
+{
+    "presets": [
+        [
+            "@babel/preset-env", {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ]
+    ]
+}
