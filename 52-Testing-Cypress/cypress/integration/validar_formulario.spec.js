@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe('Valida el formulario', () => {
     it('Submit al formulario y mostrar la alerta de error', () => {
-        cy.visit('http://127.0.0.1:5500/');
+        cy.visit('/index.html');
 
         cy.get('[data-cy="formulario"]')
             .submit();

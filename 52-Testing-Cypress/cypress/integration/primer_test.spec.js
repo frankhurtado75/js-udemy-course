@@ -3,7 +3,7 @@
 describe('Carga la página principal ', () => {
     it('Carga la página principal ', () => {
         // URL de la web
-        cy.visit('http://127.0.0.1:5500/');
+        cy.visit('/index.html');
 
         // Verifica si un elemento del DOM contiene el texto expecifico 
         cy.contains('[data-cy="titulo-proyecto"]', 'Administrador de Pacientes de Veterinaria');
