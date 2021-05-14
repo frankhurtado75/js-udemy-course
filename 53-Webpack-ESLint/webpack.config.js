@@ -17,7 +17,9 @@ module.exports = {
         // Carpeta del contenido
         contentBase: path.join(__dirname, '/'),
         compress: true,
-        port: 9000
+        port: 9000,
+        publicPath: "/public/js/",
+        watchContentBase: true
     },
     // Configuración de loaders
     module: {
@@ -33,6 +35,15 @@ module.exports = {
                     options: {
                         presets: ['@babel/preset-env']
                     }
+                }
+            },
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                loader: 'eslint-loader',
+                options: {
+                    fix: true
                 }
             }
         ]
