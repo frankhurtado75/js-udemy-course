@@ -1,0 +1,31 @@
+extends ./layout/index
+
+block contenido
+    main.container.mt-5
+        .row
+            .col-md-5
+                img(src="img/nosotros.jpg", alt="imagen sobre nosotros", class="img-fluid")
+            .col-md-7
+                h1 #{pagina}
+                blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis nunc erat, sed porttitor orci tincidunt at. Duis accumsan augue sed lorem suscipit gravida. Aliquam ut faucibus ipsum. Praesent id diam ornare, tincidunt mauris rutrum, congue ligula. 
+
+                p Nulla lobortis velit volutpat nunc consectetur facilisis quis ut felis. Donec sodales mollis leo ut maximus. Sed finibus leo nunc, eu euismod ex fringilla semper. Praesent lectus ligula, ullamcorper et est ac, luctus tempor nunc. Morbi aliquam, odio vel bibendum vestibulum, ligula risus convallis sapien, condimentum porta augue risus nec quam. 
+
+                p Morbi sed gravida felis. Suspendisse eget elementum orci, eget gravida nisi. Nulla sit amet purus in arcu dictum porttitor at at turpis. Duis cursus at enim vitae suscipit. Fusce ultrices tortor nec nibh maximus, ut ultrices metus convallis. Nulla feugiat tempus nisl eu iaculis.
+    .listado-iconos
+        .container.mt-5.py-5.text-center
+            .row
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad
+                    p Fusce ultrices tortor nec nibh maximus, ut ultrices metus convallis. Nulla feugiat tempus nisl eu iaculis.
+                
+                .col-md-4
+                    img(src="img/icono_destinos.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Mejores destinos
+                    p Fusce ultrices tortor nec nibh maximus, ut ultrices metus convallis. Nulla feugiat tempus nisl eu iaculis.
+
+                .col-md-4
+                    img(src="img/icono_precios.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Los mejores precios
+                    p Fusce ultrices tortor nec nibh maximus, ut ultrices metus convallis. Nulla feugiat tempus nisl eu iaculis.
