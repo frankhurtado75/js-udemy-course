@@ -1,8 +1,9 @@
+// Métodos para strings
 const producto = 'Monitor 20 Pulgadas ';
 
-// .repetear te va a permitir repetir una cadena de texto...
-const texto = ' en Promoción'.repeat(3); //Si es decimales se redondea
-
+// .repeat va a permitir repetir una cadena de texto
+const texto = ' en Promoción'.repeat(3); 
+console.log(producto.repeat(2.2)); // Decimales se redondea
 console.log(texto);
 console.log(`${producto} ${texto} !!!`);
 

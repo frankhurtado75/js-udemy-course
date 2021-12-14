@@ -1,4 +1,4 @@
-//Objeto Math
+// Objeto Math: operaciones
 let resultado;
 
 // PI
@@ -29,16 +29,16 @@ console.log(resultado5);
 resultado6 = Math.pow(2, 4);
 console.log(resultado6);
 
-// Minimo
+// Mínimo
 resultado7 = Math.min(3,5, 1, 12, -3);
 console.log(resultado7);
 
-// Maximo
+// Máximo
 resultado8 = Math.max(3,5, 1, 12, -3);
 console.log(resultado8);
 
-// Aleatorio
-resultado9 = Math.random(); //* 20; //Usualmente no es entero y se puede multiplicar para que el valor sea mayor a 1
+// Aleatorio, usualmente no es entero y se puede multiplicar para que el valor sea mayor a 1
+resultado9 = Math.random();
 console.log(resultado9);
 
 // Aleatorio dentro de un rango. En este caso del 1 al 30

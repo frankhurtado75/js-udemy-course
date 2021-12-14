@@ -1,10 +1,22 @@
 // Creación de números
-const numero1 = 30; //Entero
-const numero2 = '20'; //Numero en string
-const numero3 = 20.20; //Flotante
-const numero4 = .102030; //Flotante
-const numero5 = -20; //Negativo
-const numero6 = new Number(80); //Objeto
+
+// Enteros
+const numero1 = 30; 
+
+// String
+const numero2 = '20';
+
+// Flotante
+const numero3 = 20.20; 
+
+// Flotante
+const numero4 = .102030;
+
+// Negativo
+const numero5 = -20;
+
+// Objeto
+const numero6 = new Number(80); 
 
 console.log(numero1);
 console.log(numero2);

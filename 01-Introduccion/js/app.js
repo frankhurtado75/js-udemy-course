@@ -7,28 +7,31 @@ function hola() {
     console.log('Mundo');
 }
 
-//prompt
+// Prompt
 prompt('Como te llamas?');
 
-//Alerta
+// Limpiar la consola
+console.clear();
+
+// Alerta
 alert('Error');
 
-//Confirmacion
+// Confirmacion
 confirm('Desea borrar este elemento?');
 
-//Arreglos
+// Arreglos
 console.log([1,2,3]);
 
-//Arreglos de tablas
+// Arreglos de tablas
 console.table([1,2,3]);
 
-//Error de consola
+// Error de consola
 console.error('Error');
 
-//Advertencia
+// Advertencia
 console.warn('Advertencia');
 
-//Tiempo de ejecusion de codigo
+// Tiempo de ejecución de código
 console.time('hola'); 
 console.warn('Advertencia');
 console.warn('Advertencia');
@@ -37,3 +40,16 @@ console.warn('Advertencia');
 console.warn('Advertencia');
 console.warn('Advertencia');
 console.timeEnd('hola');
+
+/*08 - Obteniendo ayuda con ESLint para revisar errores de código.
+// Crear el archivo .eslintrc.json
+
+{
+    "parserOptions" : {
+        "ecmaVersion": 6
+    },
+    "rules" : {
+        "semi": ["error", "always"] // Muestra errores de código o también errores de código
+    }
+}
+*/
