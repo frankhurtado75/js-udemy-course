@@ -1,3 +1,4 @@
+// Comparación booleans
 const autenticado = false;
 
 if(autenticado) {
