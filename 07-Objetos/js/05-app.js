@@ -1,10 +1,10 @@
-//Objeto dentro de objeto
+// Objeto dentro de objeto
 const producto = {
     nombre: "Monitor 20 Pulgadas",
     precio: 300,
     disponible: true, 
-    informacion : {
-        medidas : {
+    informacion: {
+        medidas: {
             peso: '1kg',
             medida: '1m'
         },

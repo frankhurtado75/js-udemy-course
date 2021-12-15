@@ -1,4 +1,4 @@
-//Destructuring de objetos anidados
+// Destructuring de objetos anidados
 const producto = {
     nombre: "Monitor 20 Pulgadas",
     precio: 300,

@@ -1,3 +1,4 @@
+// Acceder a las propiedades de un objeto
 const producto = {
     nombre: "Monitor 20 Pulgadas",
     precio: 300,
@@ -6,10 +7,10 @@ const producto = {
 
 console.log(producto);
 
-//Acceder a valores de un objeto
+// Acceder a valores de un objeto
 console.log(producto.nombre);
 console.log(producto.precio);
 console.log(producto.disponible);
 
-//Acceder mediante un arreglo
+// Acceder mediante un arreglo
 console.log(producto['nombre']);

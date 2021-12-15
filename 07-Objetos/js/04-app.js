@@ -4,7 +4,7 @@ const producto = {
     disponible: true
 }
 
-//Destructuring, extrae del objeto y crear variable en un paso
+// Destructuring, extrae del objeto y crear variable en un paso
 const {nombre, precio, disponible} = producto;
 console.log(nombre);
 console.log(precio);

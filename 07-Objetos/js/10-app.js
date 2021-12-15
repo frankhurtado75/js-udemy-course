@@ -1,4 +1,4 @@
-//Copiar objetos
+// Copiar objetos
 const producto = {
     nombre: "Monitor 20 Pulgadas",
     precio: 300,
@@ -13,10 +13,10 @@ const medidas = {
 console.log(producto)
 console.log(medidas)
 
-//Permite unir los objetos y los asigna a la nueva constante
+// Permite unir los objetos y los asigna a la nueva constante
 const resultado = Object.assign(producto, medidas);
 
-//Spread Operator o Rest Operator, copia los objetos y los asigna a la nueva constante
-const resultado2 = { ...producto, ...medidas }
+// Spread Operator o Rest Operator, copia los objetos y los asigna a la nueva constante
+const resultado2 = {...producto, ...medidas}
 
 console.log(resultado2);

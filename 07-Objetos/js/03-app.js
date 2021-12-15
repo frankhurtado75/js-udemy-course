@@ -1,3 +1,4 @@
+// Agregar o eliminar propiedades de un objeto 
 const producto = {
     nombre: "Monitor 20 Pulgadas",
     precio: 300,
