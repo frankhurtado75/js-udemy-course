@@ -1,12 +1,11 @@
 const meses = ['Enero', 'Febrero', 'Marzo'];
 
-//Metodo para agregar elemento
+// Método para agregar elemento
 meses.push('Abril');
 meses.push('Mayo');
-
 console.table(meses)
 
-//Carro de compra dentro de un arreglo
+// Carro de compra dentro de un arreglo
 const carrito = [];
 
 // Definir un producto

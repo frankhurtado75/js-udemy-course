@@ -16,11 +16,14 @@ const producto3 = {
     precio: 50
 }
 
-//Forma declarativa de agregar productos al carro de compras
+// Spread Operator es la forma declarativa de agregar productos al carro de compras
 let resultado;
 
+// Añade productos al final del arreglo
 resultado = [...carrito, producto];
 resultado = [...resultado, producto2];
+
+// Añade productos al inicio
 resultado = [producto3, ...resultado ];
 
 console.table(resultado);

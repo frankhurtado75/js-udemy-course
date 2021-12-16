@@ -31,13 +31,13 @@ carrito.unshift(producto3);
 carrito.unshift(producto4);
 carrito.unshift(producto5);
 
-//Eliminar el ultimo elemento del carro de compras
+// Eliminar el ultimo elemento del carro de compras
 carrito.pop();
 
-//Eliminar el primer elemento del carro de compras
+// Eliminar el primer elemento del carro de compras
 carrito.shift();
 
-//Eliminar un elemento de acuerdo a su posicion
+// Eliminar un elemento de acuerdo a su posicion
 carrito.splice(1,1)
 
 console.table(carrito);

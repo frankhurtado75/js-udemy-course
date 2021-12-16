@@ -15,6 +15,6 @@ const nuevoArreglo2 = carrito.forEach(function(producto){
     console.log(`${producto.nombre} - Precio: ${producto.precio}`);
 })
 
-//Ambos trabajan igual, la diferencia es que .map crea un arreglo nuevo y .forEach no
+// Ambos trabajan igual, la diferencia es que .map crea un arreglo nuevo y .forEach no
 console.log(nuevoArreglo);
 console.log(nuevoArreglo2);
